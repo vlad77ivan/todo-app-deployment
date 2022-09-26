@@ -9,7 +9,7 @@ services:
     container_name: todo-mongodb
 
   todo-backend:
-    image: vlad/todo-backend
+    image: vlad/todo-backend:local
     build: 
       context: ./todo-app/todo-backend
       dockerfile: ./Dockerfile
@@ -21,7 +21,7 @@ services:
     container_name: todo-backend
 
   todo-frontend:
-    image: vlad/todo-frontend
+    image: vlad/todo-frontend:local
     build:
       context: ./todo-app/todo-frontend
       dockerfile: ./Dockerfile
