@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-mongoose.connect("mongodb://localhost/todo-app", {
+mongoose.connect("mongodb://todo-mongodb:27017/todo-app", {
   keepAlive: true,
   useNewUrlParser: true,
   useUnifiedTopology: true,
