@@ -10,6 +10,9 @@ services:
 
   todo-backend:
     image: vlad/todo-backend
+    build: 
+      context: ./todo-app/todo-backend
+      dockerfile: ./Dockerfile
     depends_on:
       - todo-mongodb
     ports:
@@ -19,6 +22,9 @@ services:
 
   todo-frontend:
     image: vlad/todo-frontend
+    build:
+      context: ./todo-app/todo-frontend
+      dockerfile: ./Dockerfile
     depends_on:
       - todo-mongodb
       - todo-backend
