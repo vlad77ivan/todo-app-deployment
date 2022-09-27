@@ -3,6 +3,9 @@ services:
 
   todo-mongodb:
     image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=groot
+      - MONGO_INITDB_ROOT_PASSWORD=grootPASS
     ports:
       - 27017:27017
     restart: always
@@ -10,6 +13,9 @@ services:
 
   todo-backend:
     image: vlad/todo-backend:local
+    environment:
+      - DB_USER=groot
+      - DB_PASS=grootPASS
     build: 
       context: ./todo-app/todo-backend
       dockerfile: ./Dockerfile

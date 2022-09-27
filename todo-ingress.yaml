@@ -13,3 +13,10 @@ spec:
             name: todo-frontend
             port:
               number: 3000
+      - path: /todos
+        pathType: Prefix
+        backend:
+          service:
+            name: todo-backend
+            port:
+              number: 4000

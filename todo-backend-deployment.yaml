@@ -24,7 +24,18 @@ spec:
         io.kompose.service: todo-backend
     spec:
       containers:
-        - image: vlad/todo-backend:local
+        - env:
+            - name: DB_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: todo-app-secrets
+                  key: mongo_pass
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: todo-app-secrets
+                  key: mongo_user
+          image: vlad/todo-backend:local
           name: todo-backend
           ports:
             - containerPort: 4000

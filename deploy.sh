@@ -8,4 +8,4 @@ docker save vlad/todo-backend:local > todo-backend.tar
 microk8s ctr image import todo-frontend.tar
 microk8s ctr image import todo-backend.tar
 
-microk8s kubectl apply -f '*.yaml'
+microk8s kubectl apply -f 'todo*.yaml'
